@@ -3,6 +3,7 @@ import Footer from "./componets/Footer"
 import Header from "./componets/Header"
 import Popular from "./componets/Popular"
 import Products from "./componets/Product"
+import Zara from "./componets/Zara"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Clients />
       <Popular />
       <Products />
+      <Zara />
       <Footer />
     </div>
   )

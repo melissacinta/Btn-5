@@ -23,6 +23,7 @@ const BestSellerCard = ({ image }) => {
 }
 
 export default BestSellerCard
+
 const Eclipse = ({ color }) => {
   return (
     <div className="eclipse" style={{ backgroundColor: `var(${color})` }}>

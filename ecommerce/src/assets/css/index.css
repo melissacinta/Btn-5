@@ -283,6 +283,26 @@ p.popular-text {
   grid-template-columns: repeat(auto-fit, minmax(19.5rem, 1fr));
 }
 
+.zara-section {
+  background: url('../images/zara-bg.png') no-repeat;
+  background-size: cover;
+  padding-left: 18.75rem;
+  padding-block: 8.75rem 5.81rem;
+  display: flex;
+  position: relative;
+  color: #fff;
+}
+
+.zara-opaque {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-height: 19.3125rem;
+  overflow: hiddden;
+  width: 100%;
+  max-width: 45.75rem;
+  opacity: 0.08;
+}
 
 @media screen and (max-width:1722px) {
   .header, .clients, .popular-section, .product-section {

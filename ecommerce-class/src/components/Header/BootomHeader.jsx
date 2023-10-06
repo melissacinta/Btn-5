@@ -1,16 +1,5 @@
 import { CartIconBlue, DownIcon, HeartIconBlue, SearchIconBlue, UserIconBlue } from "../../utils/icons"
 
-const navigation = [
-  { text: "Home", href: "#", hasChildren: false },
-  {
-    text: "Shop", href: "#", hasChildren: true
-  }, {
-    text: "About", href: "#", hasChildren: false
-  }, { text: "Blog", href: "#", hasChildren: false },
-  {
-    text: "Contact", href: "#", hasChildren: false
-  }, { text: "Pages", href: "#", hasChildren: false },]
-
 const BootomHeader = () => {
   return (
     <div className="bottom-header">
@@ -43,3 +32,14 @@ const BootomHeader = () => {
 }
 
 export default BootomHeader
+
+const navigation = [
+  { text: "Home", href: "#", hasChildren: false },
+  {
+    text: "Shop", href: "#", hasChildren: true
+  }, {
+    text: "About", href: "#", hasChildren: false
+  }, { text: "Blog", href: "#", hasChildren: false },
+  {
+    text: "Contact", href: "#", hasChildren: false
+  }, { text: "Pages", href: "#", hasChildren: false },]

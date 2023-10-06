@@ -7,29 +7,35 @@ const EditorPick = () => {
           the conflict between </p>
       </header>
       <div className="images-grid">
-        <div className='item item1'>
-          <span>
-            men
-          </span>
-        </div>
-        <div className='item item2'>
-          <span>
-            women
-          </span>
-        </div>
-        <div className='item item3'>
-          <span>
-            accessories
-          </span>
-        </div>
-        <div className='item item4'>
-          <span>
-            kids
-          </span>
-        </div>
+        {items.map(item => (
+          <div key={item.text} className={`item ${item.classname}`}>
+            <span>
+              {item.text}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
 
 export default EditorPick
+
+const items = [
+  {
+    classname: 'item1',
+    text: 'men',
+  },
+  {
+    classname: 'item2',
+    text: 'women',
+  },
+  {
+    classname: 'item3',
+    text: 'accessories',
+  },
+  {
+    classname: 'item4',
+    text: 'kids',
+  }
+]

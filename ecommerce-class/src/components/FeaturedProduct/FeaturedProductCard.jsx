@@ -8,6 +8,7 @@ const FeaturedProductCard = ({ product }) => {
     <div className='featured-card'>
       <div className="product-img">
         <img src={product.image} alt={product.title} />
+        {product.isNew && <span>NEW</span>}
       </div>
       <div className='product-info'>
         <div className='tags'>
