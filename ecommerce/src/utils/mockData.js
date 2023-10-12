@@ -12,12 +12,14 @@ export const products = [
     name: 'Basic Dress Green',
     category: 'Dress',
     price: '$63.85',
+    show: true,
   },
   {
     image: product2,
     name: 'Adicolor Classics Joggers',
     category: 'Dress',
     price: '$63.85',
+    show: false,
   },
   {
     image: product3,
@@ -30,6 +32,7 @@ export const products = [
     name: 'Geometric print Scarf',
     category: 'Dress',
     price: '$63.85',
+    show: true,
   },
   {
     image: product5,

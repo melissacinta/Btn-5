@@ -11,6 +11,9 @@ const ProductCard = ({ data }) => {
           <span className='product-category'>{category}</span>
           <span className='product-price'>{price}</span>
         </div>
+        <div>
+          Hide me some
+        </div>
       </div>
     </div>
   )

@@ -1,7 +1,17 @@
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
+import { footerLinks } from "../utils/mockData";
+import { useState } from "react";
 
 const Footer = () => {
+  const [formDetails, setFormDetails] = useState({
+    name: "",
+    email: "hello@me.com"
+  })
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(formDetails)
+  }
   return (
     <footer>
       <div className="logo-box">
@@ -11,19 +21,24 @@ const Footer = () => {
         </div>
       </div>
       <div className="quick-links">
-        {footerLinks.map((link, i) => (
+        {footerLinks.map((group, i) => (
           <div key={i}>
-            <h4 className="section-heading">{link.name}</h4>
+            <h4 className="section-heading">{group.name}</h4>
             <ul>
-              {link.links.map((item, i) => <li key={i}><a href={item.href}>{item.name}</a></li>)}
+              {group.links.map((item, i) => <li key={i}><a href={item.href}>{item.name}</a></li>)}
             </ul>
           </div>
         ))}
         <div>
           <h4 className="section-heading">Get In Touch</h4>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div>
-              <input type="text" placeholder="Your Email" />
+              <input type="email" placeholder="Your Email" value={formDetails.email} onChange={(e) => {
+                setFormDetails({ ...formDetails, email: e.target.value })
+              }} />
+              <input type="text" placeholder="Your name" value={formDetails.name} onChange={(e) => {
+                setFormDetails({ ...formDetails, name: e.target.value })
+              }} />
               <button type="submit">Subscribe</button>
             </div>
             <p>Lore imp sum dolor Amit</p>
@@ -47,43 +62,6 @@ const socials = [
   { icon: AiOutlineTwitter, link: "#" }
 ]
 
-const footerLinks = [
-  {
-    name: "Company Info",
-    links: [
-      { name: "About Us", href: "#" },
-      { name: "Carrier", href: "#" },
-      { name: "We are hiring", href: "#" },
-      { name: "Blog", href: "#" }
-    ]
-  },
-  {
-    name: "Legal",
-    links: [
-      { name: "About Us", href: "#" },
-      { name: "Carrier", href: "#" },
-      { name: "We are hiring", href: "#" },
-      { name: "Blog", href: "#" }
-    ]
-  },
-  {
-    name: "Features",
-    links: [
-      { name: "Business Marketing", href: "#" },
-      { name: "User Analytic", href: "#" },
-      { name: "Live Chat", href: "#" },
-      { name: "Unlimited Support", href: "#" }
-    ]
-  },
-  {
-    name: "Resources",
-    links: [
-      { name: "IOS & Android", href: "#" },
-      { name: "Watch a Demo", href: "#" },
-      { name: "Customers", href: "#" },
-      { name: "API", href: "#" }
-    ]
-  }
-]
+
 
 export default Footer;

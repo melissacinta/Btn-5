@@ -1,4 +1,9 @@
+import PropTypes from 'prop-types'
 const EditorPick = () => {
+  const handleDelete = (id) => {
+    console.log({ id })
+
+  }
   return (
     <section className="editor-pick-section">
       <header className="editor-header">
@@ -7,19 +12,43 @@ const EditorPick = () => {
           the conflict between </p>
       </header>
       <div className="images-grid">
-        {items.map(item => (
-          <div key={item.text} className={`item ${item.classname}`}>
-            <span>
-              {item.text}
-            </span>
-          </div>
+        {items.map((item, i) => (
+          <ImageComponent key={i} data={item} />
         ))}
       </div>
+      <ImageComponentTwo />
     </section>
   )
 }
 
 export default EditorPick
+
+const ImageComponent = ({ data }) => {
+  console.log(data)
+  return (
+    <div className={`item ${data.classname}`}>
+      <span>
+        {data.text} {data.kids}
+      </span>
+    </div>)
+}
+
+ImageComponent.propTypes = {
+  data: PropTypes.object.isRequired,
+}
+const ImageComponentTwo = ({ text = "I am a default text" }) => {
+  // console.log({ props })
+  return (
+    <div className={`item ${2 + 6}`}>
+      <span>
+        {text}
+      </span>
+    </div>)
+}
+
+ImageComponentTwo.propTypes = {
+  text: PropTypes.string.isRequired
+}
 
 const items = [
   {
@@ -32,10 +61,10 @@ const items = [
   },
   {
     classname: 'item3',
-    text: 'accessories',
+    kids: 'accessories',
   },
   {
     classname: 'item4',
-    text: 'kids',
+    kids: 'kids',
   }
 ]

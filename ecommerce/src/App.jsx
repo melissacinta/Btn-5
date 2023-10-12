@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header headerClass={"block blue"} topHeaderClass={"bluish"} />
       <Clients />
       <Popular />
       <Products />

@@ -3,12 +3,13 @@ import { BiAlarm } from 'react-icons/bi'
 import PropTypes from "prop-types"
 import { BsChevronRight } from 'react-icons/bs'
 
-const FeaturedProductCard = ({ product }) => {
+const FeaturedProductCard = ({ product, bgColor }) => {
   return (
-    <div className='featured-card'>
+    <div className={`featured-card ${bgColor ?? ""}`}>
       <div className="product-img">
         <img src={product.image} alt={product.title} />
         {product.isNew && <span>NEW</span>}
+
       </div>
       <div className='product-info'>
         <div className='tags'>
@@ -29,5 +30,6 @@ const FeaturedProductCard = ({ product }) => {
 }
 FeaturedProductCard.propTypes = {
   product: PropTypes.object.isRequired,
+  bgColor: PropTypes.string,
 }
 export default FeaturedProductCard

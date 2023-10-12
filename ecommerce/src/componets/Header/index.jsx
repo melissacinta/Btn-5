@@ -2,12 +2,12 @@ import BottomHeader from "./BottomHeader"
 import TopHeader from "./TopHeader"
 import shopNowIcon from "../../assets/images/shop-icon.svg"
 import banner from "../../assets/images/banner-inage.svg"
-
-const Header = () => {
+import searchIcon from '../../assets/images/icon-2.svg'
+const Header = ({ headerClass, topHeaderClass }) => {
   return (
-    <header className="header">
+    <header className={`header ${headerClass ? headerClass : ""}`}>
       <div>
-        <TopHeader />
+        <TopHeader className={topHeaderClass} image={searchIcon} />
         <BottomHeader />
       </div>
       <section className="banner">

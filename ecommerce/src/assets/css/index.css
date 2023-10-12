@@ -427,3 +427,7 @@ p.popular-text {
     display: none;
   }
 }
+
+.bluish {
+  background-color: var(--black);
+}
