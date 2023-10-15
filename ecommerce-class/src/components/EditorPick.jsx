@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types'
+import { editorsPick } from '../utils/mockData'
 const EditorPick = () => {
-  const handleDelete = (id) => {
-    console.log({ id })
-
-  }
   return (
     <section className="editor-pick-section">
       <header className="editor-header">
@@ -12,11 +9,10 @@ const EditorPick = () => {
           the conflict between </p>
       </header>
       <div className="images-grid">
-        {items.map((item, i) => (
+        {editorsPick.map((item, i) => (
           <ImageComponent key={i} data={item} />
         ))}
       </div>
-      <ImageComponentTwo />
     </section>
   )
 }
@@ -36,35 +32,3 @@ const ImageComponent = ({ data }) => {
 ImageComponent.propTypes = {
   data: PropTypes.object.isRequired,
 }
-const ImageComponentTwo = ({ text = "I am a default text" }) => {
-  // console.log({ props })
-  return (
-    <div className={`item ${2 + 6}`}>
-      <span>
-        {text}
-      </span>
-    </div>)
-}
-
-ImageComponentTwo.propTypes = {
-  text: PropTypes.string.isRequired
-}
-
-const items = [
-  {
-    classname: 'item1',
-    text: 'men',
-  },
-  {
-    classname: 'item2',
-    text: 'women',
-  },
-  {
-    classname: 'item3',
-    kids: 'accessories',
-  },
-  {
-    classname: 'item4',
-    kids: 'kids',
-  }
-]

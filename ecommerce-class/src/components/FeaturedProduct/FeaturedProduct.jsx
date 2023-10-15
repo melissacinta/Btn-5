@@ -1,8 +1,5 @@
 import FeaturedProductCard from "./FeaturedProductCard";
-import featured01 from '../../assets/images/featured/featured-01.png'
-import featured02 from '../../assets/images/featured/featured-02.png'
-import featured03 from '../../assets/images/featured/featured-03.png'
-
+import { featured01, featured02, featured03 } from "../../utils/images"
 
 const FeaturedProducts = () => {
   return (

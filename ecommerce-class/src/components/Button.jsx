@@ -1,19 +1,17 @@
 import PropTypes from 'prop-types'
 
-const Button = ({ color, text }) => {
+const Button = ({ color, text, size }) => {
   return (
     <>
-      <button className={`btn ${color ? color : 'success'}`}>{text}</button>
+      <button className={`btn ${color ?? 'success'} ${size ?? 'large'}`}>{text}</button>
     </>
   )
 }
 
 Button.propTypes = {
   text: PropTypes.string,
-  icon: PropTypes.string,
+  size: PropTypes.oneOf(['large', 'small']),
   color: PropTypes.string,
-  iconLeft: PropTypes.string,
-  outlined: PropTypes.bool,
 }
 
 export default Button

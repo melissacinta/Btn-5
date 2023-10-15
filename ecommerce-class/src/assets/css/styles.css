@@ -16,6 +16,7 @@
   --secondary-color-1: #23856D;
   --alert-color: #E77C40;
   --dark-background-color: #252B42;
+  scroll-behavior: smooth;
   --danger-color: #E74040;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -88,12 +89,20 @@ p, h1, h2, h3, h4, h5, h6 {
   outline: none;
   border: none;
   border-radius: 0.3125rem;
-  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 2rem;
   letter-spacing: 0.00625rem;
   cursor: pointer;
+}
+
+.large {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.small {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 .primary, .primary-inverse:hover {
@@ -160,6 +169,7 @@ p, h1, h2, h3, h4, h5, h6 {
   gap: 1.88rem;
   align-items: center;
   margin-top: 5.19rem;
+  margin-bottom: 6.12rem;
 }
 
 .nav-links-ul a {
@@ -180,16 +190,17 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .banner-section {
-  position: relative;
-  height: 100vh;
-  max-height: 47.0625rem;
   background: var(--primary-color);
   background-repeat: no-repeat;
   background-image: url("../images/bgs/mobile-bg.svg");
   background-size: cover;
+  max-height: 47.0625rem;
+  position: relative;
+  height: 100vh;
 }
 
-.banner-section, .banner-content {
+
+.banner-section, .banner-content, .cta-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -222,6 +233,8 @@ p, h1, h2, h3, h4, h5, h6 {
   position: absolute;
   left: 0;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -393,6 +406,30 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
+/* CTA ONE */
+.cta-section {
+  position: relative;
+  background: var(--secondary-color-1);
+}
+
+.cta-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.88rem;
+  padding-top: 13rem;
+}
+
+.cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-weight: 700;
+}
+
+/* CTA TWO */
+
 .ctaTwo-header {
   gap: 2.04894rem;
   text-align: center;
@@ -555,7 +592,15 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: var(--light-text-gray-1);
 }
 
-.logo-box, .quick-links, .copyright {
+.logo-box.bg-white {
+  background-color: var(--light-text-color);
+}
+
+.logo-box hr {
+  display: none;
+}
+
+.logo-box-inner, .quick-links, .copyright {
   padding: 2.5rem 2.75rem;
 }
 
@@ -622,6 +667,163 @@ p, h1, h2, h3, h4, h5, h6 {
   ;
 }
 
+/* Product List Page */
+.breadcrumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.88rem;
+  background-color: var(--light-text-gray-1);
+}
+
+.breadcrumb h2 {
+  padding-block: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.breadcrumb-links {
+  padding-block: 0.62rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.94rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.breadcrumb-links span {
+  color: var(--second-text-color);
+}
+
+.breadcrumb-links span a {
+  color: var(--text-color);
+}
+
+.breadcrumb-icon {
+  font-size: 12px;
+  color: var(--muted-color);
+}
+
+.showcase {
+  background-color: var(--light-text-gray-1);
+  padding-inline: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.94rem;
+}
+
+.showcase-card {
+  width: 100%;
+  max-width: 20.75rem;
+  height: 18.75rem;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.62rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--light-text-color);
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--second-text-color);
+  padding-bottom: 5rem;
+}
+
+.filters .active {
+  color: var(--text-color);
+}
+
+.filters .right, .views {
+  display: flex;
+  gap: 0.94rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.views span:not(:first-child) {
+  display: inline-block;
+  padding: 0.94rem;
+  border-radius: 0.3125rem;
+  border: 1px solid var(--light-gray-2, #ECECEC);
+  flex-shrink: 0;
+}
+
+.filters .right select {
+  padding-block: 0.95rem;
+  padding-inline: 1.12rem 1.81rem;
+  border-radius: 0.3125rem;
+  border: 1px solid #DDD;
+  background: #F9F9F9;
+  color: var(--second-text-color);
+}
+
+.bestseller-section .pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.pagination button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 0;
+  padding: 1.56rem 1.25rem;
+  color: var(--primary-color);
+  border: 1px solid #E9E9E9;
+  background: var(--light-text-color);
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.pagination button.pagination-active {
+  color: var(--light-text-color);
+  background: var(--primary-color);
+}
+
+.pagination button:disabled {
+  color: var(--muted-color);
+  background: #F3F3F3;
+}
+
+.pagination button:first-child {
+  border-top-left-radius: 0.4205rem;
+  border-bottom-left-radius: 0.4205rem;
+}
+
+.pagination button:last-child {
+  border-top-right-radius: 0.4205rem;
+  border-bottom-right-radius: 0.4205rem;
+}
+
+.clients {
+  background-color: var(--light-text-gray-1);
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  align-items: center;
+  padding-block: 10rem 10.06rem;
+}
+
 @media all and (min-width: 768px) {
   .mobile-nav {
     display: none;
@@ -639,6 +841,10 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-inline: 1.5rem;
     padding-block: 0.56rem 0.31rem;
     letter-spacing: 0.0125rem;
+  }
+
+  .top-header.green {
+    background: var(--secondary-color-1);
   }
 
   .socials, .socials span, .contact a, .contact {
@@ -748,6 +954,15 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-inline: 5rem;
   }
 
+  .logo-box-inner {
+    padding: 2.5rem 0;
+  }
+
+  .logo-box hr {
+    display: block;
+    background-color: #E6E6E6;
+  }
+
   .editor-pick-section .images-grid {
     display: grid;
     grid-template-columns: auto minmax(200px, 1fr);
@@ -758,6 +973,24 @@ p, h1, h2, h3, h4, h5, h6 {
       'men men women accessories'
       'men men women kids';
     min-height: 500px;
+  }
+
+  .cta-content {
+    padding-top: 7rem;
+    max-width: 80vw;
+  }
+
+  .cta-content .banner-content {
+    max-width: 31.8125rem;
+    align-items: flex-start;
+    text-align: left;
+    padding-block: 3.75rem 6rem;
+  }
+
+  .cta-btns, .cta-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   .ctaTwo-section {
@@ -827,7 +1060,7 @@ p, h1, h2, h3, h4, h5, h6 {
     color: var(--success-color);
   }
 
-  .logo-box {
+  .logo-box-inner {
     display: flex;
     justify-content: space-between;
   }
@@ -852,7 +1085,43 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
   }
 
+  /* Product List page */
+  .breadcrumb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 5rem;
+  }
+
+  .clients {
+    flex-direction: row;
+    gap: 1.88rem;
+    flex-wrap: wrap;
+    padding-block: 3.12rem;
+    padding-inline: 3rem;
+    justify-content: center;
+  }
+
+  .breadcrumb-icon {
+    font-size: 16px;
+  }
+
+  .showcase-card {
+    width: 100%;
+    max-width: 12.8125rem;
+    height: 13.9375rem;
+    aspect-ratio: 1/1;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 6rem;
+  }
+
 }
+
 
 @media all and (max-width: 930px) {
   .bottom-header {
@@ -878,16 +1147,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @media all and (min-width: 1440px) {
-  .logo-box, .quick-links, .copyright, .editor-pick-section {
+  .logo-box, .quick-links, .copyright, .editor-pick-section, .clients {
     padding-inline: 12.19rem;
+  }
+
+  .breadcrumb, .filters {
+    padding-inline: 12.22rem;
   }
 
   .bestseller-section {
     padding-inline: 12.19rem 7.56rem;
   }
-
-}
-
-.red {
-  background-color: red;
 }

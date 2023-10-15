@@ -1,4 +1,5 @@
 import { BsFacebook, BsInstagram } from "react-icons/bs";
+import PropTypes from 'prop-types'
 import { MailIcon, PhoneIcon } from "../../utils/icons"
 import {
   AiFillYoutube,
@@ -18,9 +19,9 @@ const topHeaderInfo = {
   ]
 }
 
-const TopHeader = () => {
+const TopHeader = ({ bgColor }) => {
   return (
-    <div className="top-header">
+    <div className={`top-header ${bgColor}`}>
       <div className="contact">
         {topHeaderInfo.contactInfo.map((item, i) =>
           <div key={i}>
@@ -43,3 +44,6 @@ const TopHeader = () => {
 }
 
 export default TopHeader
+TopHeader.propTypes = {
+  bgColor: PropTypes.string
+}

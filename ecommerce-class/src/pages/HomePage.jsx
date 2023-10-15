@@ -5,6 +5,7 @@ import BestSeller from "../components/BestSeller/BestSeller";
 import CtaTwo from "../components/CtaTwo";
 import Footer from "../components/Footer";
 import FeaturedProducts from "../components/FeaturedProduct/FeaturedProduct";
+import Cta from "../components/Cta";
 
 const HomePage = () => {
   return (
@@ -13,7 +14,7 @@ const HomePage = () => {
       <Banner />
       <EditorPick />
       <BestSeller />
-      {/* <Cta /> */}
+      <Cta />
       <CtaTwo />
       <FeaturedProducts />
       <Footer />

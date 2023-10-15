@@ -36,3 +36,22 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const editorsPick = [
+  {
+    classname: 'item1',
+    text: 'men',
+  },
+  {
+    classname: 'item2',
+    text: 'women',
+  },
+  {
+    classname: 'item3',
+    kids: 'accessories',
+  },
+  {
+    classname: 'item4',
+    kids: 'kids',
+  },
+];

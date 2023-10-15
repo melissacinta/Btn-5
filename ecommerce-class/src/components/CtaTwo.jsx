@@ -10,8 +10,8 @@ const CtaTwo = () => {
           Universe</h2>
         <p className="section-subtext">We know how large objects will act, but things on a small scale.</p>
         <div>
-          <Button text="BUY NOW" color="primary" />
-          <Button text="Learn More" color="primary-inverse" />
+          <Button text="BUY NOW" color="primary" size={"small"} />
+          <Button text="Learn More" color="primary-inverse" size={"small"} />
         </div>
       </header>
       <div className='ctaTwo-img-container'>

@@ -1,14 +1,10 @@
-// import FeaturedProducts from "./components/FeaturedProduct/FeaturedProduct"
-// import ProductListPage from "./pages/ProductListPage"
-
-import HomePage from "./pages/HomePage"
+import ProductListPage from "./pages/ProductListPage"
 
 
 function App() {
   return (
     <>
-      {/* <ProductListPage /> */}
-      <HomePage />
+      <ProductListPage />
     </>
   )
 }

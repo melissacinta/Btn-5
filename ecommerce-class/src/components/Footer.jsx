@@ -2,23 +2,20 @@ import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { footerLinks } from "../utils/mockData";
 import { useState } from "react";
+import PropTypes from "prop-types"
 
-const Footer = () => {
-  const [formDetails, setFormDetails] = useState({
-    name: "",
-    email: "hello@me.com"
-  })
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(formDetails)
-  }
+const Footer = ({ bgColor }) => {
+  const [email, setEmail] = useState("")
   return (
     <footer>
-      <div className="logo-box">
-        <span className="logo">Bandage</span>
-        <div className="footer-icons">
-          {socials.map((item, i) => <item.icon key={i} className="icon-primary" />)}
+      <div className={`logo-box ${bgColor}`}>
+        <div className="logo-box-inner">
+          <span className="logo">Bandage</span>
+          <div className="footer-icons">
+            {socials.map((item, i) => <item.icon key={i} className="icon-primary" />)}
+          </div>
         </div>
+        <hr />
       </div>
       <div className="quick-links">
         {footerLinks.map((group, i) => (
@@ -31,15 +28,13 @@ const Footer = () => {
         ))}
         <div>
           <h4 className="section-heading">Get In Touch</h4>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={(e) => { e.preventDefault() }}>
             <div>
-              <input type="email" placeholder="Your Email" value={formDetails.email} onChange={(e) => {
-                setFormDetails({ ...formDetails, email: e.target.value })
+              <input type="email" placeholder="Your Email" value={email} onChange={(e) => {
+                setEmail(e.target.value)
+                console.log(e.target.value)
               }} />
-              <input type="text" placeholder="Your name" value={formDetails.name} onChange={(e) => {
-                setFormDetails({ ...formDetails, name: e.target.value })
-              }} />
-              <button type="submit">Subscribe</button>
+              <button type="submit" onClick={() => console.log(email)}>Subscribe</button>
             </div>
             <p>Lore imp sum dolor Amit</p>
           </form>
@@ -62,6 +57,8 @@ const socials = [
   { icon: AiOutlineTwitter, link: "#" }
 ]
 
-
+Footer.propTypes = {
+  bgColor: PropTypes.string
+}
 
 export default Footer;
